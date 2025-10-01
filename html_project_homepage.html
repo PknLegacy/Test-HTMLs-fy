@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Projekt Portfolio - Neon Edition</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @keyframes neonPulse {
+            0%, 100% { text-shadow: 0 0 10px #00f3ff, 0 0 20px #00f3ff, 0 0 30px #00f3ff, 0 0 40px #ff00de; }
+            50% { text-shadow: 0 0 20px #00f3ff, 0 0 30px #00f3ff, 0 0 40px #00f3ff, 0 0 60px #ff00de; }
+        }
+
+        @keyframes borderGlow {
+            0%, 100% { box-shadow: 0 0 15px #00f3ff, 0 0 30px #ff00de, inset 0 0 15px rgba(0, 243, 255, 0.2); }
+            50% { box-shadow: 0 0 30px #00f3ff, 0 0 60px #ff00de, inset 0 0 30px rgba(255, 0, 222, 0.2); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes gridMove {
+            0% { background-position: 0 0; }
+            100% { background-position: 50px 50px; }
+        }
+
+        @keyframes scanline {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100vh); }
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0a1a;
+            background-image: 
+                linear-gradient(rgba(0, 243, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 0, 222, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridMove 4s linear infinite;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #00f3ff, transparent);
+            animation: scanline 4s linear infinite;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        header {
+            background: rgba(10, 10, 26, 0.9);
+            padding: 60px 40px;
+            border-radius: 20px;
+            border: 2px solid #00f3ff;
+            box-shadow: 0 0 30px rgba(0, 243, 255, 0.5), 0 0 60px rgba(255, 0, 222, 0.3), inset 0 0 30px rgba(0, 243, 255, 0.1);
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(0, 243, 255, 0.1), transparent);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        h1 {
+            color: #00f3ff;
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            animation: neonPulse 2s ease-in-out infinite;
+            position: relative;
+            z-index: 1;
+            font-weight: 900;
+        }
+
+        .subtitle {
+            color: #ff00de;
+            font-size: 1.3em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #ff00de, 0 0 20px #ff00de;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 2px;
+        }
+
+        .project-lead {
+            margin-top: 30px;
+            padding: 25px;
+            background: rgba(0, 243, 255, 0.05);
+            border-radius: 15px;
+            border: 2px solid #ff00de;
+            box-shadow: 0 0 20px rgba(255, 0, 222, 0.4), inset 0 0 20px rgba(0, 243, 255, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-lead strong {
+            color: #00f3ff;
+            font-size: 1.2em;
+            text-shadow: 0 0 10px #00f3ff;
+        }
+
+        .project-lead a {
+            color: #ff00de;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            text-shadow: 0 0 5px #ff00de;
+            font-size: 1.1em;
+        }
+
+        .project-lead a:hover {
+            color: #00f3ff;
+            text-shadow: 0 0 15px #00f3ff, 0 0 30px #00f3ff;
+            letter-spacing: 1px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .project-card {
+            background: rgba(10, 10, 26, 0.9);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid #00f3ff;
+            transition: all 0.5s ease;
+            cursor: pointer;
+            position: relative;
+            animation: borderGlow 3s ease-in-out infinite;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 0, 222, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.5s;
+        }
+
+        .project-card:hover::before {
+            left: 100%;
+        }
+
+        .project-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 0 50px rgba(0, 243, 255, 0.8), 0 0 100px rgba(255, 0, 222, 0.6);
+            border-color: #ff00de;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 50%, #0a0a1a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5em;
+            color: #00f3ff;
+            font-weight: 900;
+            text-shadow: 0 0 20px #00f3ff, 0 0 40px #ff00de, 0 0 60px #00f3ff;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 2px solid #ff00de;
+        }
+
+        .project-image::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 243, 255, 0.2), transparent);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .project-content {
+            padding: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-title {
+            font-size: 1.8em;
+            color: #00f3ff;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px #00f3ff;
+        }
+
+        .project-description {
+            color: #ff00de;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 1.05em;
+            text-shadow: 0 0 5px rgba(255, 0, 222, 0.5);
+        }
+
+        .project-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #00f3ff 0%, #ff00de 100%);
+            color: #0a0a1a;
+            padding: 15px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 800;
+            transition: all 0.3s;
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.5), 0 0 40px rgba(255, 0, 222, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 2px solid transparent;
+        }
+
+        .project-link:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 40px rgba(0, 243, 255, 0.9), 0 0 80px rgba(255, 0, 222, 0.7);
+            background: linear-gradient(135deg, #ff00de 0%, #00f3ff 100%);
+            border-color: #00f3ff;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px;
+            color: #00f3ff;
+            font-size: 1em;
+            text-shadow: 0 0 10px #00f3ff, 0 0 20px #ff00de;
+            border-top: 2px solid #00f3ff;
+            background: rgba(10, 10, 26, 0.8);
+            border-radius: 15px;
+            letter-spacing: 2px;
+        }
+
+        .glow-circle {
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .glow-circle:nth-child(1) {
+            background: radial-gradient(circle, rgba(0, 243, 255, 0.2) 0%, transparent 70%);
+            top: 10%;
+            left: 10%;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .glow-circle:nth-child(2) {
+            background: radial-gradient(circle, rgba(255, 0, 222, 0.2) 0%, transparent 70%);
+            bottom: 10%;
+            right: 10%;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+                letter-spacing: 3px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .project-image {
+                height: 200px;
+                font-size: 4em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="glow-circle"></div>
+    <div class="glow-circle"></div>
+
+    <div class="container">
+        <header>
+            <h1>⚡ HTML Projekt Portfolio ⚡</h1>
+            <p class="subtitle">
+                HIER BAUE UND TESTE ICH VERSCHIEDENE HTML-PROJEKTE<br>
+                FÜR KREATIVE WEBENTWICKLUNG IM NEON-STYLE
+            </p>
+            <div class="project-lead">
+                <strong>⚡ PROJEKTLEITUNG ⚡</strong><br><br>
+                Caylen Ulver<br><br>
+                <a href="https://www.youtube.com/@PknLegacy" target="_blank">🎥 YOUTUBE KANAL BESUCHEN →</a>
+            </div>
+        </header>
+
+        <div class="projects-grid">
+            <div class="project-card" onclick="window.location.href='HTML1.html'">
+                <div class="project-image">
+                    P1
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">⚡ Projekt 1 ⚡</h3>
+                    <p class="project-description">
+                        Interaktive Webseite mit modernem Neon-Design und dynamischen LED-Effekten
+                    </p>
+                    <a href="HTML1.html" class="project-link">Ansehen →</a>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="window.location.href='HTML2.html'">
+                <div class="project-image">
+                    P2
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">⚡ Projekt 2 ⚡</h3>
+                    <p class="project-description">
+                        Responsive Landing Page mit cyberpunk-inspirierten Animationen
+                    </p>
+                    <a href="HTML2.html" class="project-link">Ansehen →</a>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="window.location.href='HTML3.html'">
+                <div class="project-image">
+                    P3
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">⚡ Projekt 3 ⚡</h3>
+                    <p class="project-description">
+                        Futuristisches Dashboard mit glühenden UI-Komponenten
+                    </p>
+                    <a href="HTML3.html" class="project-link">Ansehen →</a>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="window.location.href='HTML4.html'">
+                <div class="project-image">
+                    P4
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">⚡ Projekt 4 ⚡</h3>
+                    <p class="project-description">
+                        Portfolio mit LED-Galerie und leuchtenden Kontaktformularen
+                    </p>
+                    <a href="HTML4.html" class="project-link">Ansehen →</a>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="window.location.href='HTML5.html'">
+                <div class="project-image">
+                    P5
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">⚡ Projekt 5 ⚡</h3>
+                    <p class="project-description">
+                        Experimentelle Seite mit intensiven Neon-Effekten und Glow
+                    </p>
+                    <a href="HTML5.html" class="project-link">Ansehen →</a>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>⚡ © 2025 HTML PROJEKT PORTFOLIO ⚡<br>GELEITET VON CAYLEN ULVER</p>
+        </footer>
+    </div>
+</body>
+</html>
