@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PknLegacy - Premium Rust Cheats 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1429 100%);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #00d4ff 0%, #0099ff 50%, #0066ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 153, 255, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 153, 255, 0.2);
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, #0099ff 0%, #0066ff 100%);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 153, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(0, 153, 255, 0.5);
+        }
+
+        .feature-icon {
+            background: linear-gradient(135deg, rgba(0, 153, 255, 0.2) 0%, rgba(0, 102, 255, 0.2) 100%);
+            border: 1px solid rgba(0, 153, 255, 0.3);
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(0, 153, 255, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(0, 153, 255, 0.6); }
+        }
+
+        .price-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .price-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(0, 153, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: 0.5s;
+        }
+
+        .price-card:hover::before {
+            left: 100%;
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #00d4ff, #0099ff);
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-opacity-80 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg flex items-center justify-center font-bold text-xl">
+                        P
+                    </div>
+                    <span class="text-2xl font-bold gradient-text">PknLegacy</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#features" class="nav-link text-gray-300 hover:text-white">Features</a>
+                    <a href="#pricing" class="nav-link text-gray-300 hover:text-white">Preise</a>
+                    <a href="#faq" class="nav-link text-gray-300 hover:text-white">FAQ</a>
+                    <a href="#contact" class="nav-link text-gray-300 hover:text-white">Kontakt</a>
+                </div>
+                <a href="#pricing" class="btn-primary px-6 py-3 rounded-lg font-semibold">Jetzt kaufen</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="floating mb-8">
+                <span class="inline-block px-6 py-2 bg-blue-500 bg-opacity-20 border border-blue-500 rounded-full text-sm font-semibold mb-6">
+                    ✨ Undetected seit 2024 | Über 2.000+ Aktive Nutzer
+                </span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                Premium Rust Cheats<br>
+                <span class="gradient-text">Made by PknLegacy</span>
+            </h1>
+            <p class="text-xl text-gray-400 mb-12 max-w-3xl mx-auto">
+                Sichere und unentdeckte Rust Scripts mit erstklassiger Recoil-Kontrolle, präzisem Aim-Assist und integriertem Anti-Detection-System. Vertraut von Tausenden Spielern in 2025.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#pricing" class="btn-primary px-8 py-4 rounded-lg font-bold text-lg">
+                    🚀 Jetzt starten
+                </a>
+                <a href="#features" class="px-8 py-4 rounded-lg font-bold text-lg border-2 border-blue-500 hover:bg-blue-500 hover:bg-opacity-10 transition">
+                    📋 Mehr erfahren
+                </a>
+            </div>
+            
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20">
+                <div class="card p-6 rounded-xl">
+                    <div class="text-4xl font-bold gradient-text mb-2">2,000+</div>
+                    <div class="text-gray-400">Aktive Nutzer</div>
+                </div>
+                <div class="card p-6 rounded-xl">
+                    <div class="text-4xl font-bold gradient-text mb-2">99.8%</div>
+                    <div class="text-gray-400">Uptime</div>
+                </div>
+                <div class="card p-6 rounded-xl">
+                    <div class="text-4xl font-bold gradient-text mb-2">24/7</div>
+                    <div class="text-gray-400">Support</div>
+                </div>
+                <div class="card p-6 rounded-xl">
+                    <div class="text-4xl font-bold gradient-text mb-2">0</div>
+                    <div class="text-gray-400">Bans</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Leistungsstarke Features</h2>
+                <p class="text-gray-400 text-lg">Alles was du brauchst, um in Rust zu dominieren</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card p-8 rounded-2xl">
+                    <div class="feature-icon w-16 h-16 rounded-xl flex items-center justify-center text-3xl mb-6">
+                        🎯
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Perfect Aimbot</h3>
+                    <p class="text-gray-400">Präzises Zielsystem mit konfigurierbaren Smoothness-Einstellungen und FOV-Anpassungen für natürliches Gameplay.</p>
+                </div>
+
+                <div class="card p-8 rounded-2xl">
+                    <div class="feature-icon w-16 h-16 rounded-xl flex items-center justify-center text-3xl mb-6">
+                        🔫
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">No Recoil</h3>
+                    <p class="text-gray-400">Eliminiere Waffenrückstoß komplett. Unterstützt alle Waffen mit individuellen Profilen für optimale Performance.</p>
+                </div>
+
+                <div class="card p-8 rounded-2xl">
+                    <div class="feature-icon w-16 h-16 rounded-xl flex items-center justify-center text-3xl mb-6">
+                        👁️
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">ESP & Wallhack</h3>
+                    <p class="text-gray-400">Sehe Spieler, Loot und Ressourcen durch Wände. Anpassbare Farben und Distanz-Filter für beste Übersicht.</p>
+                </div>
+
+                <div class="card p-8 rounded-2xl">
+                    <div class="feature-icon w-16 h-16 rounded-xl flex items-center justify-center text-3xl mb-6">
+                        🛡️
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Anti-Detection</h3>
+                    <p class="text-gray-400">Modernste Anti-Cheat-Bypass-Technologie. Regelmäßige Updates halten dich sicher vor EAC und anderen Systemen.</p>
+                </div>
+
+                <div class="card p-8 rounded-2xl">
+                    <div class="feature-icon w-16 h-16 rounded-xl flex items-center justify-center text-3xl mb-6">
+                        ⚡
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Speed Hacks</h3>
+                    <p class="text-gray-400">Erhöhte Bewegungsgeschwindigkeit mit Anti-Detection-Limits für sicheres und schnelles Farming.</p>
+                </div>
+
+                <div class="card p-8 rounded-2xl">
+                    <div class="feature-icon w-16 h-16 rounded-xl flex items-center justify-center text-3xl mb-6">
+                        🎨
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Anpassbares UI</h3>
+                    <p class="text-gray-400">Vollständig konfigurierbares Overlay-Menü. Passe Farben, Größen und Positionen nach deinen Wünschen an.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 px-4 bg-gradient-to-b from-transparent via-blue-900 via-opacity-5 to-transparent">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Wähle dein Paket</h2>
+                <p class="text-gray-400 text-lg">Flexible Preise für jeden Spieler</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Basic -->
+                <div class="price-card card p-8 rounded-2xl">
+                    <div class="text-gray-400 font-semibold mb-4">STARTER</div>
+                    <div class="mb-6">
+                        <span class="text-5xl font-bold">19€</span>
+                        <span class="text-gray-400">/7 Tage</span>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <span class="text-green-400 mr-3">✓</span>
+                            <span>Aimbot</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-400 mr-3">✓</span>
+                            <span>No Recoil</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-400 mr-3">✓</span>
+                            <span>Basic ESP</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-400 mr-3">✓</span>
+                            <span>24/7 Support</span>
+                        </li>
+                        <li class="flex items-center opacity-40">
+                            <span class="text-gray-600 mr-3">✗</span>
+                            <span>Premium Features</span>
+                        </li>
+                    </ul>
+                    <button class="w-full py-4 rounded-lg border-2 border-blue-500 hover:bg-blue-500 hover:bg-opacity-10 transition font-bold">
+                        Auswählen
+                    </button>
+                </div>
+
+                <!-- Pro -->
+                <div class="price-card card p-8 rounded-2xl border-2 border-blue-500 pulse-glow scale-105 relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-500 to-blue-600 px-6 py-2 rounded-full text-sm font-bold">
+                        BELIEBT
+                    </div>
+                    <div class="text-blue-400 font-semibold mb-4">PRO</div>
+                    <div class="mb-6">
+                        <span class="text-5xl font-bold">49€</span>
+                        <span class="text-gray-400">/30 Tage</span>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <span class="text-green-400 mr-3">✓</span>
+                            <span>Advanced Aimbot</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-400 mr-3">✓</span>
+                            <span>No Recoil Pro</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-400 mr-3">✓</span>
+                            <span>Full ESP & Wallhack</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-400 mr-3">✓</span>
+                            <span>Speed Hacks</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-400 mr-3">✓</span>
+                            <span>Priority Support</span>
+                        </li>
+                    </ul>
+                    <button class="w-full btn-primary py-4 rounded-lg font-bold">
+                        Jetzt kaufen
+                    </button>
+                </div>
+
+                <!-- Premium -->
+                <div class="price-card card p-8 rounded-2xl">
+                    <div class="text-gray-400 font-semibold mb-4">ULTIMATE</div>
+                    <div class="mb-6">
+                        <span class="text-5xl font-bold">129€</span>
+                        <span class="text-gray-400">/Lifetime</span>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <span class="text-green-400 mr-3">✓</span>
+                            <span>Alle Pro Features</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-400 mr-3">✓</span>
+                            <span>Lebenslanger Zugang</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-400 mr-3">✓</span>
+                            <span>Exklusive Features</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-400 mr-3">✓</span>
+                            <span>VIP Discord-Rolle</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-400 mr-3">✓</span>
+                            <span>Kostenlose Updates</span>
+                        </li>
+                    </ul>
+                    <button class="w-full py-4 rounded-lg border-2 border-blue-500 hover:bg-blue-500 hover:bg-opacity-10 transition font-bold">
+                        Auswählen
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Häufig gestellte Fragen</h2>
+                <p class="text-gray-400 text-lg">Alles was du wissen musst</p>
+            </div>
+            
+            <div class="space-y-6">
+                <div class="card p-6 rounded-xl">
+                    <h3 class="text-xl font-bold mb-3">Ist PknLegacy sicher vor Bans?</h3>
+                    <p class="text-gray-400">Ja, wir verwenden fortschrittliche Anti-Detection-Technologie und aktualisieren unsere Software regelmäßig. Seit Launch hatten wir 0 Bans bei korrekter Nutzung.</p>
+                </div>
+
+                <div class="card p-6 rounded-xl">
+                    <h3 class="text-xl font-bold mb-3">Welche Zahlungsmethoden akzeptiert ihr?</h3>
+                    <p class="text-gray-400">Wir akzeptieren PayPal, Kreditkarten, Kryptowährungen und verschiedene andere Zahlungsmethoden für maximale Flexibilität.</p>
+                </div>
+
+                <div class="card p-6 rounded-xl">
+                    <h3 class="text-xl font-bold mb-3">Wie schnell erhalte ich Zugang?</h3>
+                    <p class="text-gray-400">Sofort nach der Zahlung erhältst du automatisch deine Zugangsdaten per E-Mail. Der gesamte Prozess dauert weniger als 2 Minuten.</p>
+                </div>
+
+                <div class="card p-6 rounded-xl">
+                    <h3 class="text-xl font-bold mb-3">Gibt es Support?</h3>
+                    <p class="text-gray-400">Ja, wir bieten 24/7 Support über Discord und Ticket-System. Pro-Nutzer erhalten Priority-Support mit schnelleren Antwortzeiten.</p>
+                </div>
+
+                <div class="card p-6 rounded-xl">
+                    <h3 class="text-xl font-bold mb-3">Funktioniert es auf allen Servern?</h3>
+                    <p class="text-gray-400">PknLegacy funktioniert auf offiziellen und den meisten Community-Servern. Wir testen regelmäßig auf verschiedenen Servertypen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="card p-12 rounded-3xl">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    Bereit zu starten?
+                </h2>
+                <p class="text-xl text-gray-400 mb-8">
+                    Schließe dich über 2.000 zufriedenen Spielern an und dominiere Rust noch heute.
+                </p>
+                <a href="#pricing" class="btn-primary inline-block px-10 py-5 rounded-lg font-bold text-lg">
+                    Jetzt Zugang erhalten 🚀
+                </a>
+                <div class="mt-8 text-sm text-gray-500">
+                    ✓ Sofortiger Zugang • ✓ 24/7 Support • ✓ Sichere Zahlung
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="py-12 px-4 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg flex items-center justify-center font-bold">
+                            P
+                        </div>
+                        <span class="text-xl font-bold gradient-text">PknLegacy</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">Premium Rust Cheats für ambitionierte Spieler.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Produkt</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#features" class="hover:text-white transition">Features</a></li>
+                        <li><a href="#pricing" class="hover:text-white transition">Preise</a></li>
+                        <li><a href="#faq" class="hover:text-white transition">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Support</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition">Discord</a></li>
+                        <li><a href="#" class="hover:text-white transition">Ticket System</a></li>
+                        <li><a href="#" class="hover:text-white transition">Dokumentation</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition">Nutzungsbedingungen</a></li>
+                        <li><a href="#" class="hover:text-white transition">Datenschutz</a></li>
+                        <li><a href="#" class="hover:text-white transition">Impressum</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
+                <p>© 2025 PknLegacy. Alle Rechte vorbehalten. Made with 💙 by PknLegacy</p>
+                <p class="mt-2 text-xs">Hinweis: Diese Software dient nur zu Bildungszwecken. Die Nutzung erfolgt auf eigene Verantwortung.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animate on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
